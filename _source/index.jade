@@ -1,0 +1,39 @@
+#header.container
+	video(autoplay='', muted='', loop='')
+		source(src='quiet-reel.mp4', type='video/mp4')
+		//- source(src='http://www.w3schools.com/html/mov_bbb.ogg', type='video/ogg')
+	.row
+		p.subtitle Oh hai, I'm
+		h1 Victoria Greenwood
+		p.subtitle Actor, doodler, banjo player
+		a.button(href="Demo Reel") Watch demo reel
+	
+
+
+section#about.container
+	.row
+		h2 About me
+		.about-content!= partial("about")
+
+
+section#photos.container
+	.row
+		h2 Photos
+	#gallery.row(data-columns='')
+		for photo in public.images.photos._contents
+			a.swipebox(href="images/photos/#{ photo }" title="")
+				img(src="images/photos/#{ photo }" alt="image")
+
+
+//- END
+script(src="js/jquery-2.1.0.min.js")
+
+script(src="js/jquery.swipebox.min.js")
+script(src="js/salvatorre.js")
+script(src="js/app.js")
+
+
+	//- section#demo-reel.row.card
+	//- 	h2 Demo reel
+	//- 	.yt-video
+	//- 		iframe(allowfullscreen='' src="https://www.youtube.com/embed/2BkmI7PEsto" frameborder='0')
